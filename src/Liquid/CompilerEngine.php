@@ -6,6 +6,7 @@ use Symfony\Component\Debug\Exception\FatalThrowableError;
 use ErrorException;
 use Illuminate\View\Compilers\CompilerInterface;
 use Illuminate\View\Engines\PhpEngine;
+use Illuminate\Support\Str;
 
 class CompilerEngine extends PhpEngine
 {
@@ -34,7 +35,7 @@ class CompilerEngine extends PhpEngine
         $this->compiler = $compiler;
 
         foreach($config AS $key => $value) {
-            if(method_exists($this->compiler, $method = camel_case('set_' . $key))) {
+            if(method_exists($this->compiler, $method = Str::camel('set_' . $key))) {
                 $this->compiler->$method($value);
             }
         }

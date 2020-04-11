@@ -270,7 +270,7 @@ class LiquidCompiler extends Compiler implements CompilerInterface
      */
     public function findTemplate($template)
     {
-        if($path = $this->getViewFinder()->find($template)) {
+        if($path = $this->getViewFinder()->find('theme::' . $template)) {
             if(!array_key_exists($path, $this->filemtime)) {
                 $this->filemtime[$path] = $this->files->lastModified($path);
             }

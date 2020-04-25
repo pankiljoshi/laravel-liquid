@@ -29,6 +29,7 @@ use Liquid\Filters\Arr;
 use Liquid\Filters\Multy;
 use Liquid\Filters\Math;
 use Liquid\Filters\Date;
+use Liquid\Filters\URL;
 
 return [
 
@@ -92,6 +93,7 @@ return [
         Multy::class,
         Math::class,
         Date::class,
+        URL::class,
     ],
 
     /*

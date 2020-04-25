@@ -45,5 +45,4 @@ class Escape
     {
         return is_string($input) ? htmlentities($input, ENT_QUOTES, 'utf-8', false) : $input;
     }
-
 }
